@@ -1,0 +1,30 @@
+Few of the Asset class methods that will improve coding and improve quality
+which records only failed assertions
+
+void assertEquals(boolean expected, boolean actual)
+void assertTrue(boolean expected, boolean actual)
+void assetFalse(boolean condition)
+void assetNotNull(Object object)
+void assetSame(boolean condition)
+void assertNotSame(boolean condition)
+void assetArrayEquals(expectedArray, resultArray)
+
+Different types of method over annotation differs the method from there way of executing
+
+@Test
+@Before
+@After
+@BeforClass
+@AfterClass
+@Ignore
+
+ignore annotation helps in situation when your code is all ready and 
+apart from some block then you can use ignore annotation to run rest of the code
+ignore annotation at class level will ignore whole of the test cases
+
+
+@Test(timeout=1000)
+timeout attribute will gets out of execution if you it isnt done in time
+
+@Test(expected=ArithematicException.class)
+the following is the syntax for exception handling in Junit test
