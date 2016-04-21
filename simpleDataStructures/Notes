@@ -1,0 +1,20 @@
+Chain Recursion:
+
+If there are two method Method a()  and b() and 
+if a called from b and b is called from 
+then both the functions are said to be in chain recursion.
+
+Binary Search:
+
+Consider if there are 100 elements and there index numbers are stored in an array
+and asked to trace an element from the elements 
+then MIN+MAX/2 and compare the tracing element with the mid element 
+if mid>trasing element then continue your search towards right of the array 
+as mid+High/2 and compare till you find the element you are actually tracing for. 
+
+Tower of Honoi:
+
+Tower of Honoi contains three bars with names A, B and C where A contains 5(n) disks consider it as stack move 1 to b and then c
+and two to b and 1 back to 2 and three to b and so on
+
+

@@ -1,0 +1,81 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>Filter in AngulareJS</title>
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+	<h1>Sample Angular Js Filters</h1>
+	<div ng-app="mainApp" ng-controller="studentController">
+		<table border="0">
+			<tr>
+				<td>Enter your First Name:</td>
+				<td><input  type="text" ng-model="student.firstName"></input></td>
+			</tr>
+			<tr>
+				<td>Enter your Last Name:</td>
+				<td><input  type="text" ng-model="student.lastName"></input></td>
+			</tr>
+			<tr>
+				<td>Enter Fees:</td>
+				<td><input  type="text" ng-model="student.fees"></input></td>
+			</tr>
+			<tr>
+				<td>Enter Subjects:</td>
+				<td><input  type="text" ng-model="subjectName"></input></td>
+			</tr>
+		</table>
+
+		<table border="0">
+			<tr>
+				<td>Name is in Upper Case:  </td>
+				<td>{{student.fullName() | uppercase}}</td>
+			</tr>
+			<tr>
+				<td>Name in lower case:</td>
+				<td>{{student.fullName() | lowercase}}</td>
+			</tr>
+			<tr>
+				<td>fees:</td>
+				<td>{{student.fees | currency}}</td>
+			</tr>
+			<tr>
+				<td>Subject:</td>
+				<td>
+					<ul>
+						<li ng-repeat="subject in student.subjects | filter: subjectName | orgerBy:'marks'">
+						{{subject.name + ', marks:'+ subject.marks}}
+							
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+
+
+	</div>
+	<script>
+		var mainApp= angular.module("mainApp", []);
+		mainApp.controller('studentController', function($scope){
+		$scope.student{
+			firstName:"Adam",
+			lastName: "Gilkrist",
+			fees:500,
+
+			subjects:[
+				{name:'Maths', marks:95},
+				{name:'physics', marks:80},
+				{name:'chemistry', marks:75}
+			],
+
+			fullName: function(){
+				var studentObject;
+				studentObject=$scope.subject;
+				return studentObject.firstname+" "+studentObject.lasttname;
+				}
+
+			};
+		});
+	</script>
+</body>
+</html>
